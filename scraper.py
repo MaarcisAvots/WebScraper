@@ -43,12 +43,18 @@ def info(datne):
         print("=======================")
         tags = row.find('h3')
         gramata['nosaukums'] = tags.find('a')['title']
-        print("Nosaukusm: "+gramata['nosaukums'])
+        print("Nosaukums: "+gramata['nosaukums'])
         gramata['vertejums'] = row.find('p')['class']
         gramata['vertejums'] =str(gramata['vertejums'])
         size = len(gramata['vertejums'])
         gramata['vertejums'] = gramata['vertejums'][17:size - 2]
         print("Vērtējums: "+gramata['vertejums'])
+        tags = row.find('p', class_="price_color")
+        gramata['cena'] = tags.find
+        gramata['cena'] =str(gramata['cena'])
+        size = len(gramata['cena'])
+        gramata['cena'] = gramata['cena'][50:size - 5]
+        print(gramata['cena'])
 
 info("lapas/1_lapa.html")
 
