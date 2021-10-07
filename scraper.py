@@ -26,18 +26,16 @@ def info(datne):
     with open(datne, 'r', encoding='UTF-8') as f:
         html = f.read()
 
-    zupa = bs(html, "html.parser")
+    base = bs(html, "html.parser")
 
-    galvena = zupa.find("div", class_="product_pod")
-    print(galvena)
+    galvena = base.find_all("article", class_="product_pod")
+    
     #tabulas = galvena.find_all("article")
-
-    # for tabula in galvena:
-    #     print(tabula)
-    #     print("=======================")
-    #     print("=======================")
-    #     print("=======================")
-
+    print(galvena)
+    # for i in range(1, len(galvena)):
+    #     print("==========================")
+    #     print(galvena[i].get_text())
+    print("==========================")
     #auto_tabula = tabulas[1]
 
     # rindas = auto_tabula.find_all("tr")
