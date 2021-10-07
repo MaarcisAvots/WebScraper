@@ -43,12 +43,12 @@ def info(datne):
         print("=======================")
         tags = row.find('h3')
         gramata['nosaukums'] = tags.find('a')['title']
-        print(gramata['nosaukums'])
+        print("Nosaukusm: "+gramata['nosaukums'])
         gramata['vertejums'] = row.find('p')['class']
         gramata['vertejums'] =str(gramata['vertejums'])
         size = len(gramata['vertejums'])
         gramata['vertejums'] = gramata['vertejums'][17:size - 2]
-        print(gramata['vertejums'])
+        print("Vērtējums: "+gramata['vertejums'])
 
 info("lapas/1_lapa.html")
 
