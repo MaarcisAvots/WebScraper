@@ -46,6 +46,7 @@ def info(datne):
         #print("Nosaukums: "+gramata['nosaukums'])
 
 
+
         gramata['vertejums'] = row.find('p')['class']
         gramata['vertejums'] =str(gramata['vertejums'])
         size = len(gramata['vertejums'])
