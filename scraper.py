@@ -40,12 +40,54 @@ def info(datne):
     for row in galvena:
         gramata = {}
         # print(row)
-        print("=======================")
+        #print("=======================")
         tags = row.find('h3')
         gramata['nosaukums'] = tags.find('a')['title']
-        print(gramata['nosaukums'])
+        #print("Nosaukums: "+gramata['nosaukums'])
 
 
-info("lapas/1_lapa.html")
+        gramata['vertejums'] = row.find('p')['class']
+        gramata['vertejums'] =str(gramata['vertejums'])
+        size = len(gramata['vertejums'])
+        gramata['vertejums'] = gramata['vertejums'][17:size - 2]
+        #print("Vērtējums: "+gramata['vertejums'])
 
-#lejupieladet_lapas(5)
+
+        tags = row.find('p', class_="price_color")
+        gramata['cena'] = tags.find
+        gramata['cena'] =str(gramata['cena'])
+        size = len(gramata['cena'])
+        gramata['cena'] = gramata['cena'][50:size - 5]
+        #print("Cena: "+gramata['cena'])
+
+
+        tags = row.find('p', class_="instock availability")
+        gramata['vaiir'] = tags.find
+        gramata['vaiir'] =str(gramata['vaiir'])
+        size = len(gramata['vaiir'])
+        gramata['vaiir'] = gramata['vaiir'][96:size -11]
+        #print("Vai ir pieejams: "+gramata['vaiir'])
+
+        dati.append(gramata)
+    return dati
+
+def saglabat_datus(dati):
+    with open(f"{DATI}gramatas.csv", 'w', encoding='UTF-8', newline="") as f:
+        kolonu_nosaukumi = ['nosaukums', 'vertejums', 'cena', 'vaiir']
+        w = csv.DictWriter(f, fieldnames= kolonu_nosaukumi)
+        w.writeheader()
+        for gramata in dati:
+            w.writerow(gramata)
+
+
+cik = 50
+#lejupieladet_lapas(cik)
+def izvilkt_datus(cik):
+    visi_dati = []
+    for i in range(1, cik + 1):
+        datne = f"{LAPAS}{i}_lapa.html"
+        datnes_dati = info(datne)
+        visi_dati += datnes_dati
+
+    saglabat_datus(visi_dati)
+izvilkt_datus(cik)
