@@ -58,7 +58,8 @@ def info(datne):
         gramata['cena'] = tags.find
         gramata['cena'] =str(gramata['cena'])
         size = len(gramata['cena'])
-        gramata['cena'] = gramata['cena'][50:size - 5]
+        gramata['cena'] = gramata['cena'][51:size - 5]
+        gramata['cena'] = float(gramata['cena'])
         #print("Cena: "+gramata['cena'])
 
 
