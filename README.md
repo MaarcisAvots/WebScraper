@@ -1,2 +1,2 @@
 # WebScraper
-Šo Iespējams veidoja Reinis D, Reinis Z, Reinis S, Reinis A
+Šo Iespējams veidoja Reinis D (Reinis Drēska), Reinis Z (Reinis Zonne), Reinis S (Mareks Siņica), Reinis A (Mārcis Avots)
