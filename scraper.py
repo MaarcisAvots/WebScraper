@@ -54,7 +54,13 @@ def info(datne):
         gramata['cena'] =str(gramata['cena'])
         size = len(gramata['cena'])
         gramata['cena'] = gramata['cena'][50:size - 5]
-        print(gramata['cena'])
+        print("Cena: "+gramata['cena'])
+        tags = row.find('p', class_="instock availability")
+        gramata['vaiir'] = tags.find
+        gramata['vaiir'] =str(gramata['vaiir'])
+        size = len(gramata['vaiir'])
+        gramata['vaiir'] = gramata['vaiir'][96:size -11]
+        print("Vai ir pieejams: "+gramata['vaiir'])
 
 info("lapas/1_lapa.html")
 
