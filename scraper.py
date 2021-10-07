@@ -44,7 +44,15 @@ def info(datne):
         tags = row.find('h3')
         gramata['nosaukums'] = tags.find('a')['title']
         print(gramata['nosaukums'])
-
+        gramata['vertejums'] = row.find('p')['class']
+        gramata['vertejums'] =str(gramata['vertejums'])
+        start = 0
+        stop = 16
+        if len(gramata['vertejums']) > stop :
+            gramata['vertejums'] = gramata['vertejums'][0: start:] + gramata['vertejums'][stop + 1::]
+            size = len(gramata['vertejums'])
+            gramata['vertejums'] = gramata['vertejums'][:size - 2]
+        print(gramata['vertejums'])
 
 info("lapas/1_lapa.html")
 
