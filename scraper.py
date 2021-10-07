@@ -30,22 +30,21 @@ def info(datne):
 
     galvena = base.find_all("article", class_="product_pod")
     
-    #tabulas = galvena.find_all("article")
-    print(galvena)
+
+    #print(galvena)
     # for i in range(1, len(galvena)):
     #     print("==========================")
-    #     print(galvena[i].get_text())
-    print("==========================")
-    #auto_tabula = tabulas[1]
+    #     print(i, galvena[i].get_text())
+    # print("==========================")
 
-    # rindas = auto_tabula.find_all("tr")
+    for row in galvena:
+        gramata = {}
+        # print(row)
+        print("=======================")
+        tags = row.find('h3')
+        gramata['nosaukums'] = tags.find('a')['title']
+        print(gramata['nosaukums'])
 
-    # for rinda in rindas[1:-1]:
-    #     auto = {}
-    #     # print(rinda)
-    #     # print("=======================")
-    #     # print("=======================")
-    #     # print("=======================")    
 
 info("lapas/1_lapa.html")
 
